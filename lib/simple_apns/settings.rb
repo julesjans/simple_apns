@@ -35,6 +35,10 @@ module SimpleAPNS
       self.mode == :production ? 'feedback.push.apple.com' : 'feedback.sandbox.push.apple.com'
     end
     
+    def options
+      @options || []
+    end
+    
     def check
       raise SimpleAPNS::MissingCertificate unless @cert
       raise SimpleAPNS::MissingPid unless @pid
@@ -68,6 +72,11 @@ module SimpleAPNS
     def port=(port)
       raise RuntimeError if set?
       @port = port
+    end
+    
+    def options=(options)
+      raise RuntimeError if set?
+      @options = options
     end
 
   end

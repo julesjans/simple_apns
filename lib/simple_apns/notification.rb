@@ -8,10 +8,13 @@ module SimpleAPNS
       
       token = message.split(/\0/)[0]
       alert = message.split(/\0/)[1]
-      title = message.split(/\0/)[2]
-      s     = message.split(/\0/)[3]
-    
-      @payload = {"aps" => {"alert" => alert, "badge" => 0, "sound" => 'default'}, "t" => title, "s" => s}
+      
+      @payload = {"aps" => {"alert" => alert, "badge" => 0, "sound" => 'default'}}
+      
+      SimpleAPNS::Settings.options.each.with_index(2) do |option, index| 
+        @payload[option.to_s] = message.split(/\0/)[index]
+      end
+      
       @json = @payload.to_json() 
       @token = token
       
