@@ -6,7 +6,7 @@ module SimpleAPNS
   
     notification = "#{token}\0#{text}"
       
-    SimpleAPNS::Settings.options.each {|option| notification << "\0#{opts[option]}"}
+    SimpleAPNS::Settings.params.each {|param| notification << "\0#{opts[param]}"}
      
     notification_byte_size(token, text, opts)
 
@@ -62,7 +62,7 @@ module SimpleAPNS
   end
   
   def self.server_settings
-    "#{SimpleAPNS::Settings.cert} #{SimpleAPNS::Settings.pid} #{SimpleAPNS::Settings.mode} #{SimpleAPNS::Settings.port} #{SimpleAPNS::Settings.options.collect {|o| o.to_s} .join(',')}" 
+    "#{SimpleAPNS::Settings.cert} #{SimpleAPNS::Settings.pid} #{SimpleAPNS::Settings.mode} #{SimpleAPNS::Settings.port} #{SimpleAPNS::Settings.params.collect {|p| p.to_s} .join(',')}" 
   end
   
   

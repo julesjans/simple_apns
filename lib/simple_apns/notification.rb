@@ -11,8 +11,8 @@ module SimpleAPNS
       
       @payload = {"aps" => {"alert" => alert, "badge" => 0, "sound" => 'default'}}
       
-      SimpleAPNS::Settings.options.each.with_index(2) do |option, index| 
-        @payload[option.to_s] = message.split(/\0/)[index]
+      SimpleAPNS::Settings.params.each.with_index(2) do |param, index| 
+        @payload[param.to_s] = message.split(/\0/)[index]
       end
       
       @json = @payload.to_json() 

@@ -35,8 +35,8 @@ module SimpleAPNS
       self.mode == :production ? 'feedback.push.apple.com' : 'feedback.sandbox.push.apple.com'
     end
     
-    def options
-      @options || []
+    def params
+      @params || []
     end
     
     def check
@@ -74,9 +74,9 @@ module SimpleAPNS
       @port = port
     end
     
-    def options=(options)
+    def params=(params)
       raise RuntimeError if set?
-      @options = options
+      @params = params
     end
 
   end

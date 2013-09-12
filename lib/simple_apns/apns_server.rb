@@ -13,7 +13,7 @@ begin
       
         SimpleAPNS::Connection.send_notification(notification)
     
-        # TODO: do we receive a warning from Apple if the connection is going to go down.
+        # TODO: do we receive a warning from Apple if the connection is going to go down?
         # FIXME: issue a raise//retry here if the connection has been dropped by Apple
     
       end

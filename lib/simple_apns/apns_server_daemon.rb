@@ -1,11 +1,11 @@
 require_relative "../simple_apns.rb"
 
 SimpleAPNS::Settings.config do |config|
-  config.cert     = ARGV[2]
-  config.pid      = ARGV[3]
-  config.mode     = ARGV[4].to_sym
-  config.port     = ARGV[5].to_i
-  config.options  = ARGV[6].split(',').collect {|o| o.to_sym} rescue []
+  config.cert    = ARGV[2]
+  config.pid     = ARGV[3]
+  config.mode    = ARGV[4].to_sym
+  config.port    = ARGV[5].to_i
+  config.params  = ARGV[6].split(',').collect {|p| p.to_sym} rescue []
 end
 
 SimpleAPNS::Settings.check
