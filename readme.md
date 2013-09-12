@@ -15,9 +15,19 @@ This gem requires Ruby >=1.9.3 & Daemons.
 2. You must have a vaild token to push to an iOS device.
 
 
+###Installation
+
+This gem is not distributed built. Either clone & build, or use bundler:
+
+```ruby	
+
+	gem 'simple_apns', :git => 'https://github.com/julesjans/simple_apns.git'
+```
+
+
 ###Configuration
 
-Once the gem is built and installed:
+Once the gem is installed:
 
 ```ruby
 	require 'simple_apns'
@@ -87,11 +97,11 @@ Addtionally configured parameters are included in a hash:
 1. The notification payload is limited to 256 bytes.
 
 
-###TODO
+###Todo
 
-1. Service feedback.
+1. APNS Service feedback.
 
-2. Test code.
+2. Implement testing library.
 
 
 
