@@ -9,7 +9,7 @@ module SimpleAPNS
     SimpleAPNS::Settings.params.each {|param| notification << "\0#{opts[param]}"}
      
     notification_byte_size(token, text, opts)
-
+  
     begin
       socket = TCPSocket.new('localhost', SimpleAPNS::Settings.port)
       socket.write(notification)

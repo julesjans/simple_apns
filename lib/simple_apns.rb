@@ -4,7 +4,6 @@ require 'socket'
 require 'openssl'
 require 'json'
 
-
 require_relative 'simple_apns/error.rb'
 require_relative 'simple_apns/apns.rb'
 require_relative 'simple_apns/settings.rb'

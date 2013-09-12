@@ -5,7 +5,7 @@ Best uses are in testing, or in production for small services (internal apps etc
 
 ###Pre-requisites
 
-This gem requires Ruby >=2.0.0 & Daemons.
+This gem requires Ruby >=1.9.3 & Daemons.
 
 
 ###Preparation
@@ -52,7 +52,7 @@ Optionally you can configure:
 3. Additional params: the standard message includes a single text string, here you can include other params, e.g. an identifier.
 
 
-###Useage
+###Usage
 
 ```ruby
 	token   = "a1a1a1a1a..."

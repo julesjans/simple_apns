@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
   s.files         = Dir['lib/**/**']
   s.test_files    = Dir["test/test*.rb"]
   s.has_rdoc      = false
-  s.required_ruby_version = '>=2.0.0'
+  
+  # s.required_ruby_version = '>=2.0.0'
   
   s.add_dependency "daemons"
 
