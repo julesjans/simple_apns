@@ -1,4 +1,4 @@
-A super simple gem for sending push notifications directly through Apple's Push Notification Service.
+A simple gem for sending push notifications directly through Apple's Push Notification Service.
 
 Best uses are in testing, or in production for small services (internal apps etc), it is not liable to scale well. 
 
@@ -99,7 +99,11 @@ Addtionally configured parameters are included in a hash:
 
 ###Todo
 
-1. APNS Service feedback.
+1. Test APNS Service feedback:
+
+```ruby
+	SimpleAPNS::check_feedback
+```
 
 2. Implement testing library.
 

@@ -65,31 +65,22 @@ module SimpleAPNS
     "#{SimpleAPNS::Settings.cert} #{SimpleAPNS::Settings.pid} #{SimpleAPNS::Settings.mode} #{SimpleAPNS::Settings.port} #{SimpleAPNS::Settings.params.collect {|p| p.to_s} .join(',')}" 
   end
   
-  
-  
-  
-  
-  
-  
   def self.check_feedback
     
-    # TODO: return a dictionary of objects with the time and the token
+    # TODO: return a dictionary of objects with the time and the token, this needs to be tested, but apple do not return sample responses.
     
-    # APNS::Feedback.get_connection
-    # 
-    # messages = []  
-    # 
-    # while line = APNS::Feedback.ssl.read(38)
-    #   f = line.unpack('N1n1H64')
-    #   messages << {:time => Time.at(f[0]), :token => f[2]}
-    # end
-    # 
-    # APNS::Feedback.disconnect
-    #  
-    # for message in messages
-    #   iphone = Iphone.find(:first, :conditions => {:token => message[:token]})
-    #   iphone.destroy if iphone.created_at.to_time < message[:time] 
-    # end
+    SimpleAPNS::Feedback.get_connection
+    
+    responses = []  
+    
+    while line = SimpleAPNS::Feedback.ssl.read(38)
+      f = line.unpack('N1n1H64')
+      responses << {:time => Time.at(f[0]), :token => f[2]}
+    end
+    
+    SimpleAPNS::Feedback.disconnect
+     
+    responses
     
   end
   
