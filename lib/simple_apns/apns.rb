@@ -3,9 +3,9 @@ module SimpleAPNS
   def self.send_notification(token, text, opts={})
     
     self.start_server
-  
-    notification = "#{token}\0#{text}"
-      
+    
+    notification = "#{token}\0#{text}\0#{opts[:badge]||0}"
+    
     SimpleAPNS::Settings.params.each {|param| notification << "\0#{opts[param]}"}
      
     notification_byte_size(token, text, opts)

@@ -70,6 +70,12 @@ Optionally you can configure:
 
 	SimpleAPNS::send_notification(token, text)
 ```
+
+To set the badge number:
+
+```ruby
+	SimpleAPNS::send_notification(token, text, {badge => 1})
+```
 	
 Sending a notification will start the APNS server (if it is not already started). It will remain running, waiting for more notifications to send, until it is stopped:
 

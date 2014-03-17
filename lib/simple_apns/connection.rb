@@ -10,7 +10,7 @@ module SimpleAPNS
     def self.get_connection
   
       if @@ssl == nil || @@sock == nil
-      
+        
         ctx         = OpenSSL::SSL::SSLContext.new
         ctx.key     = OpenSSL::PKey::RSA.new(File.read(SimpleAPNS::Settings.cert), '')
         ctx.cert    = OpenSSL::X509::Certificate.new(File.read(SimpleAPNS::Settings.cert))
