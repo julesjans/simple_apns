@@ -74,27 +74,27 @@ Optionally you can configure:
 To set the badge number:
 
 ```ruby
-	SimpleAPNS::send_notification(token, text, {badge => 1})
+	SimpleAPNS.send_notification(token, text, {badge => 1})
 ```
 	
 Sending a notification will start the APNS server (if it is not already started). It will remain running, waiting for more notifications to send, until it is stopped:
 
 ```ruby
-	SimpleAPNS::stop_server
+	SimpleAPNS.stop_server
 ```
 
 The server can be manually started, or restarted, without sending a message:
 
 ```ruby
-	SimpleAPNS::start_server
+	SimpleAPNS.start_server
 	
-	SimpleAPNS::restart_server
+	SimpleAPNS.restart_server
 ```
 
 Addtionally configured parameters are included in a hash:
 
 ```ruby
-	SimpleAPNS::send_notification(token, text, {:id => 'my_identifier'})
+	SimpleAPNS.send_notification(token, text, {:id => 'my_identifier'})
 ```
 
 	
@@ -108,7 +108,7 @@ Addtionally configured parameters are included in a hash:
 1. Test APNS Service feedback:
 
 ```ruby
-	SimpleAPNS::check_feedback
+	SimpleAPNS.check_feedback
 ```
 
 2. Implement testing library.
