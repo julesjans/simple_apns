@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.name          = 'simple_apns'
   s.summary       = 'A super simple gem for communicating with the Apple Push Notification service.'
   s.description   = 'To come'
-  s.version       = "0.0.3"
+  s.version       = "0.0.4"
   s.author        = 'Jules Jans'
   s.email         = 'julesjans@me.com'
   s.platform      = Gem::Platform::RUBY

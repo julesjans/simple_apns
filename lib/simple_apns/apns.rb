@@ -4,7 +4,7 @@ module SimpleAPNS
     
     self.start_server
     
-    notification = "#{token}\0#{text}\0#{opts[:badge]||0}"
+    notification = "#{token}\0#{text}\0#{opts[:badge]||0}\0#{opts[:sound]||'default'}"
     
     SimpleAPNS::Settings.params.each {|param| notification << "\0#{opts[param]}"}
      

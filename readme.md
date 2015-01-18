@@ -74,7 +74,13 @@ Optionally you can configure:
 To set the badge number:
 
 ```ruby
-	SimpleAPNS.send_notification(token, text, {badge => 1})
+	SimpleAPNS.send_notification(token, text, {badge: 1})
+```
+
+To set a custom sound:
+
+```ruby
+	SimpleAPNS.send_notification(token, text, {badge: 0, sound: 'mysound.wav'})
 ```
 	
 Sending a notification will start the APNS server (if it is not already started). It will remain running, waiting for more notifications to send, until it is stopped:
@@ -94,7 +100,7 @@ The server can be manually started, or restarted, without sending a message:
 Addtionally configured parameters are included in a hash:
 
 ```ruby
-	SimpleAPNS.send_notification(token, text, {:id => 'my_identifier'})
+	SimpleAPNS.send_notification(token, text, {id: 'my_identifier'})
 ```
 
 	
