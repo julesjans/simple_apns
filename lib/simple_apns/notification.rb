@@ -13,7 +13,7 @@ module SimpleAPNS
       
       @payload = {"aps" => {"alert" => alert, "badge" => badge.to_i, "sound" => sound}}
       
-      SimpleAPNS::Settings.params.each.with_index(3) do |param, index| 
+      SimpleAPNS::Settings.params.each.with_index(4) do |param, index| 
         @payload[param.to_s] = message.split(/\0/)[index]
       end
       
