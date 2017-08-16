@@ -3,19 +3,19 @@ A simple gem for sending push notifications directly through Apple's Push Notifi
 Best uses are in testing, or in production for small services (internal apps etc), it is not liable to scale well. 
 
 
-###Pre-requisites
+### Pre-requisites
 
 This gem requires Ruby >=1.9.3 & Daemons.
 
 
-###Preparation
+### Preparation
 
 1. You must first obtain an APNS certificate and then create a .pem file: [developer.apple.com](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ProvisioningDevelopment.html)
 
 2. You must have a vaild token to push to an iOS device.
 
 
-###Installation
+### Installation
 
 This gem is not distributed built. Either clone & build, or use bundler:
 
@@ -25,7 +25,7 @@ This gem is not distributed built. Either clone & build, or use bundler:
 ```
 
 
-###Configuration
+### Configuration
 
 Once the gem is installed:
 
@@ -62,7 +62,7 @@ Optionally you can configure:
 3. Additional params: the standard message includes a single text string, here you can include other params, e.g. an identifier.
 
 
-###Usage
+### Usage
 
 ```ruby
 	token   = "a1a1a1a1a..."
@@ -104,12 +104,12 @@ Addtionally configured parameters are included in a hash:
 ```
 
 	
-###Limitations
+### Limitations
 
 1. The notification payload is limited to 256 bytes.
 
 
-###Todo
+### Todo
 
 1. Test APNS Service feedback:
 
